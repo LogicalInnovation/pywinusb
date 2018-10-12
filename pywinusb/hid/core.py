@@ -732,7 +732,7 @@ class HidDevice(HidDeviceBaseClass):
 
         if self.__raw_handler:
             #this might slow down data throughput, but at the expense of safety
-            self.__raw_handler(helpers.ReadOnlyList(raw_report))
+            self.__raw_handler(self, helpers.ReadOnlyList(raw_report))
             return
 
         # using pre-parsed report templates, by report id
